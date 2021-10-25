@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 {% block title %}{% endblock title %}
 {% block main %}
-main content
+<div class="login">
+    <h1>ورود کارمندان</h1>
+    <hr>
+    <form action="{% url 'users:login' %}" method="post">
+      {% csrf_token %}
+      <input type="text" name="username" id="username_id" placeholder="نام کاربری">
+      <input type="password" name="password" id="password_id" placeholder="رمز ورود">
+      <input type="submit" value="ورود">
+    </form>
+  </div>
 {% endblock main %}
