@@ -3,9 +3,12 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
+from report.models import Report
+
 
 def dashboard(request):
-    return render(request, "users/dashboard.html")
+    reports = Report.objects.filter(employee=request.user)
+    return render(request, "users/dashboard.html", {"reports": reports})
 
 
 def user_login(request):

@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}داشبورد{% endblock title %}
 {% block main %}
-  
+<div class="container dashboard">
+  {% for report in reports %}
+    <ul class="row">
+      <li>{{ report.date }}</li>
+      <li>{{ report.text|truncatechars:150 }}</li>
+      <input class="edit" type="button" value="ویرایش">
+      <input class="error" type="button" value="حذف">
+    </ul>
+  {% endfor %}
+</div>
 {% endblock main %}
 
