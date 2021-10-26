@@ -4,8 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 
-def index(request):
-    return HttpResponse("Success")
+def dashboard(request):
+    return render(request, "users/dashboard.html")
 
 
 def user_login(request):
@@ -15,13 +15,12 @@ def user_login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect("users:succ")
+            return redirect("users:dashboard")
         else:
             messages.error(request, "نام کاربری یا رمز ورود اشتباه است.")
-            print("Bad Credential.")
     # If users is already logged in go to main page
     if request.user.is_authenticated:
-        return redirect("users:succ")
+        return redirect("users:dashboard")
     return render(request, "users/login.html")
 
 

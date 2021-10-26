@@ -19,6 +19,35 @@ body {
   background-color: var(--main-bg);
 }
 
+
+nav ul {
+  list-style-type: none;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  padding: 20px;
+  background-color: #6d4c41;
+}
+
+nav li:hover {
+  background-color: #5d4037;
+}
+
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+/* nav a:hover {
+  background-color: red;
+} */
+
+
 .messages {
   list-style-type: none;
   width: 80%;

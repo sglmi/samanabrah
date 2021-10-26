@@ -1,9 +1,9 @@
-{% if user.is_authenticated %}
-<nav>
+<nav class="main-nav">
   <ul>
-    <li><a href="#">Link 1</a></li>
-    <li><a href="#">Link 2</a></li>
-    <li><a href="#">Link3</a></li>
+    {% if user.is_authenticated %}
+      <li><a href="#">افزودن گزاش</a></li>
+      <li><a href="#">مشاهده گزارش‌ها</a></li>
+      <li><a href="{% url 'users:logout' %}">خروج</a></li>
+    {% endif %}
   </ul>
 </nav>
-{% endif %}
