@@ -19,7 +19,9 @@ def user_login(request):
         else:
             messages.error(request, "نام کاربری یا رمز ورود اشتباه است.")
             print("Bad Credential.")
-
+    # If users is already logged in go to main page
+    if request.user.is_authenticated:
+        return redirect("users:succ")
     return render(request, "users/login.html")
 
 
