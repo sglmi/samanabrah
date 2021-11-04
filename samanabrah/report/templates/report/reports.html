@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block main %}
+{% for report in reports %}
+    <p>{{ report.text }}</p>
+{% endfor %}
+{% endblock main %}

@@ -1,7 +1,7 @@
 <nav class="main-nav">
   <ul>
     {% if user.is_authenticated %}
-      <li><a href="#">افزودن گزاش</a></li>
+      <li><a href="{% url 'report:create' %}">افزودن گزاش</a></li>
       <li><a href="{% url 'users:logout' %}">خروج</a></li>
     {% endif %}
   </ul>

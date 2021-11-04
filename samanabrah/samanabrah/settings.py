@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "report.apps.ReportConfig",
     # Third party apps
+    "jalali_date",
 ]
 
 MIDDLEWARE = [

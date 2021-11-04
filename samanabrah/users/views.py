@@ -6,9 +6,9 @@ from django.contrib import messages
 from report.models import Report
 
 
-def dashboard(request):
+def reports(request):
     reports = Report.objects.filter(employee=request.user)
-    return render(request, "users/dashboard.html", {"reports": reports})
+    return render(request, "users/reports.html", {"reports": reports})
 
 
 def user_login(request):
@@ -18,12 +18,12 @@ def user_login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect("users:dashboard")
+            return redirect("users:reports")
         else:
             messages.error(request, "نام کاربری یا رمز ورود اشتباه است.")
     # If users is already logged in go to main page
     if request.user.is_authenticated:
-        return redirect("users:dashboard")
+        return redirect("users:reports")
     return render(request, "users/login.html")
 
 

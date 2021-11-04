@@ -10,7 +10,11 @@
   --bd: #aaa;
   --error: #d32f2f;
   --submit: #1565c0;
+  --btn-hover: #0f56a7;
 }
+
+
+
 html {
   text-align: right;
   direction: rtl;
@@ -44,14 +48,37 @@ nav a {
   color: white;
 }
 
+
+/* -------------------   
+    GLOBAL STYLES    
+------------------- */
+.btn {
+  background-color: var(--submit);
+  color: white;
+  font-weight: bold;
+  border: none;
+ 
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.entry {
+  background-color: var(--second-bg);
+  border: 1px solid var(--bd);
+  outline: none;
+}
+
 .container {
   width: 80%;
   margin: auto;
 }
 
+/* MESSAGES */
 .messages {
   list-style-type: none;
-  width: 80%;
+  width: 100%;
   margin: auto;
   text-align: center;
 }
@@ -64,47 +91,42 @@ nav a {
 
 /* LOGIN */
 .login {
-  background-color: var(--second-bg);
-  width: 25%;
+  display: flex;
   margin: auto;
-  margin-top: 5%;
-  padding: 20px 0 40px 0;
-  border-radius: 10px;
+  margin-top: 100px;
   border: 1px solid var(--bd);
+  width: 65%;
+  /* right bottom blure padding */
+  box-shadow: 0 0 50px 10px var(--bd)
+}
+
+/* LOGIN */
+.login img {
+  max-width: 450px;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.login form {
+  flex-grow: 1;
+  background-color: var(--second-bg);
+  padding: 1rem;
 }
 
 .login h1 {
   text-align: center;
-  margin: 5px 0;
-}
-
-.login hr {
-  background-color: var(--bd);
-  height: 1px;
-  margin: 20px 0 50px 0;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 
 .login input {
-  background-color: var(--second-bg);
   display: block;
-  width: 75%;
+  width: 90%;
   margin: auto;
   margin-top: 10px;
   padding: 10px;
-  border: 1px solid var(--bd);
 }
 
-.login input[type="submit"] {
-  background-color: var(--submit);
-  color: white;
-  font-weight: bold;
-  margin-top: 30px;
-  border: none;
-}
-
-.login input[type="submit"]:hover {
-  background-color: #003c8f;
-}
 
 .dashboard {
   margin-top: 2rem;
@@ -150,21 +172,32 @@ footer p {
 /* Media Quries */
 @media (max-width:1024px) { 
   .login {
-    width: 40%;
+    width: 80%;
+  }
+  .login img {
+    width: 350px;
   }
 
 }
 
 @media (max-width:768px) { 
-  .login {
-    width: 55%;
+
+  .login img {
+    display: none;
   }
  
 }
 
 @media (max-width:468px) { 
   .login {
-    width: 70%;
+    width: 80%;
+  }
+  .login img {
+    display: none;
+  }
+
+  .login h1 {
+    font-size: 1.5rem;
   }
   
 }

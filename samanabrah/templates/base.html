@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block style %}{% endblock style %}
     <title>{% block title %}{% endblock title%}</title>
 </head>
 <body>
@@ -17,5 +18,8 @@
     {% block main %}{% endblock main %}
   </main>
   <footer><p>کلیه حقوق مادی معنوی این وب سایت متعلق به شرکت سامان آبراه می باشد.</p></footer>
+  <!-- Script for specific page -->
+  {% block script %}
+  {% endblock script %}
 </body>
 </html>

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load jalali_tags %}
+
+
+{% block title %}گزارش{% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
+{% endblock style %}
+
+{% block main %}
+<div class="container">
+  <h1>ایجاد گزارش جدید</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit"value="ایجاد گزارش">
+  </form>
+</div>
+{% endblock main %}
+
+{% block script %}
+<script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
+<script src="{% static 'users/js/vcount.js' %}"></script>
+<script>
+  VCountdown({
+    target: '.countdown',
+    maxChars: "{{ form.fields.text.max_length }}",
+  });
+</script>
+{% endblock script %}

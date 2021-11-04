@@ -18,7 +18,8 @@ from django.urls import path, include
 from users import views as users_view
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
     path("", users_view.user_login),
+    path("admin/", admin.site.urls),
     path("users/", include("users.urls")),
+    path("report/", include("report.urls")),
 ]

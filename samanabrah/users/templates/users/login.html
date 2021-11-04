@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}{% endblock title %}
 {% block main %}
-<div class="login">
-    <h1>ورود کارمندان</h1>
-    <hr>
-    <form action="{% url 'users:login' %}" method="post">
-      {% csrf_token %}
-      <input type="text" name="username" id="username_id" placeholder="نام کاربری">
-      <input type="password" name="password" id="password_id" placeholder="رمز ورود">
-      <input type="submit" value="ورود">
-    </form>
+<div class="container login">
+  <div class="right">
+    <img src="{% static 'img/right.jpg' %}" alt="water image">
   </div>
+  <form action="{% url 'users:login' %}" method="POST">
+    <h1>ورود کارمندان</h1>
+    {% csrf_token %}
+    <input class="entry" type="text" name="username" id="username_id" placeholder="نام کاربری">
+    <input class="entry" type="password" name="password" id="password_id" placeholder="رمز ورود">
+    <input class="btn" type="submit" value="ورود">
+  </form>
+</div>
 {% endblock main %}
